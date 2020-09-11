@@ -14,7 +14,7 @@ namespace WebApi.Repositories
 {
     public class CampaignRepository
     {
-        public List<CampaignModel> GetByDate(string data)
+        public List<CampaignModel> GetByDate(string data = "")
         {
             var result = new List<CampaignModel>();
 

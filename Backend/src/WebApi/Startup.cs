@@ -14,8 +14,6 @@ namespace WebApi
         public void Configuration(IAppBuilder appBuilder)
         {
             HttpConfiguration config = new HttpConfiguration();
-            //config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            //config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
             config.EnableCors();
             config.Routes.MapHttpRoute(
                 name: "createUserApi",

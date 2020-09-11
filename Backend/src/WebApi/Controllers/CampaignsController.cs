@@ -25,7 +25,7 @@ namespace WebApi.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, error);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK, new { data = listCampaign });
+            return Request.CreateResponse(HttpStatusCode.OK, new { data = listCampaign, total = listCampaign.Count });
         }
     }
 }
