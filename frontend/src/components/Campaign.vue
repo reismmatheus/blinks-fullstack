@@ -12,15 +12,8 @@
             striped hover 
             :items="items" 
             :fields="fields"
-            :busy="isBusy"
             show-empty
             empty-text="Empty">
-             <template v-slot:table-busy>
-              <div class="text-center my-2">
-                <b-spinner class="align-middle"></b-spinner>
-                <strong> Loading...</strong>
-              </div>
-            </template>
           </b-table>
           <b-pagination
             v-model="currentPage"
@@ -39,7 +32,6 @@ import CampaignService from '@/services/CampaignService'
 export default {
     data() {
       return {
-        isBusy: false,
         search: '',
         currentPage: 1,
         perPage: 10,
@@ -76,7 +68,7 @@ export default {
     },
     watch: {
       search(value) {
-        this.isBusy = true;
+        this.items = [];
       
         const date = value.split('-');
 
@@ -92,9 +84,6 @@ export default {
           .catch(error => {
             console.log(error)
             this.makeToast('danger', 'Error', 'Unexpected Error')
-          })
-          .finally(() => {
-            this.isBusy = false;
           })
       }
   }

@@ -10,13 +10,14 @@ Install the dependencies and devDependencies and start the server.
 - Restore Package from Nuget
 - Start
 
-Run in [url] (http://localhost:5000)
+Run in http://localhost:5000
 
 #### FrontEnd
 
 ```sh
 cd frontend
+yarn install
 yarn serve
 ```
 
-- Open the browser in [url] (http://localhost:8080)
+- Open the browser in http://localhost:8080
